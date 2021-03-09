@@ -1,0 +1,28 @@
+/* i am one smooth ass hunky */
+
+.boxed {
+    border: 2px solid black;
+    border-style: solid;
+}
+
+.container i {
+    margin-left: -30px;
+    cursor: pointer;
+}
+
+.inner-border {
+    background: #000;
+    color: #fff;
+    margin: 50px;
+    padding: 15px;
+    position: relative;
+}
+.inner-border:before {
+    border: 5px solid #000;
+    content: "";
+    position: absolute;
+    top: -10px;
+    bottom: -10px;
+    left: -10px;
+    right: -10px;
+}

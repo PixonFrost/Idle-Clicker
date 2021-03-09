@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>WebPage</title>
+    <link href="style.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
+  </head>
+  <body>
+    <!-- Point Display -->
+    <div class="boxed">
+      <div style="overflow: hidden;">
+        <h1 style="margin:0;display:inline;float:left">&nbsp</h1>
+        <h1 id="cookies" >0</h1>
+      </div>
+
+      <!-- Point per second + Point Click Button -->
+      <div style="overflow: hidden;">
+        <p style="margin:0;display:inline;float:left" id="perSecond">0</p>
+        <p style="margin:0;display:inline">&nbspPoints per second</p>
+      </div>
+      <button onclick="cookieClick()">Click me you pussy</button>
+    </div>
+    <br>
+
+    <!-- Gen Tier 1 Upgrade -->
+    <div class="boxed">
+      <h3>&nbspUpgrades</h3>
+      <button onClick="buyCursor()">Buy Cursor Upgrade</button> <br>
+      Cursors: <span id="cursors">0</span><br>
+      Cost: <span id="cursorCost">10</span>
+      <br>
+    </div>
+    <br>
+
+    <!-- Registration and login -->
+    <div>
+      <div class="boxed" style="margin: 5px;display:inline;float:left">
+        <h3>Register your details here</h3>
+        <form action="" method="POST">
+          <label>UserID:</label>
+          <input type="text" id="userID" value="" size="40"><br><br>
+          <label>Name:</label>
+          <input type="text" id="name" value="" size="40"><br><br>
+          <label>Password:</label>
+          <input type="password" id="password" value="" size="40">
+          <i class="far fa-eye" id="togglePassword"></i><br><br>
+          <button type="submit"> Submit </button>
+          <button type="reset"> Reset </button>
+        </form>
+      </div>
+
+      <div class="boxed" style="margin: 5px;display:inline;float: left;">
+        <h3>Log into past saved game here</h3>
+        <form action="" method="POST">
+          <label>UserID:</label>
+          <input type="text" id="logUserID" value="" size="40"><br><br>
+          <label>Name:</label>
+          <input type="text" id="logName" value="" size="40"><br><br>
+          <label>Password:</label>
+          <input type="password" id="logPassword" value="" size="40">
+          <i class="far fa-eye" id="toggleLogPassword"></i><br><br>
+          <button type="submit"> Submit </button>
+          <button type="reset"> Reset </button>
+        </form>
+      </div>
+    </div>
+    
+    <script type="text/javascript" src="main.js"></script>
+  </body>
+</html>
