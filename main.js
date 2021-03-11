@@ -48,6 +48,7 @@ var perClick = 1;
 
 //*point generators
 var cursors = 0;
+var gen2 = 0;
 
 //* manual point gain function, the clicking bit
 function cookieClick(number){
@@ -79,6 +80,16 @@ function buyCursor(){
     var nextCost = Math.floor(10 * Math.pow(1.1,cursors));       //works out the cost of the next cursor
     document.getElementById('cursorCost').innerHTML = nextCost;  //updates the cursor cost for the user
 };
+
+function buyGen2(){
+    var gen2Cost = Math.floor(10 * Math.pow(1.1, cursors));
+    if(cookies >= gen2Cost){
+        gen2 = gen2 + 1;
+        cookies = cookies - gen2Cost;
+        document.getElementById('gen2').innerHTML = gen2;
+        document.getElementById('cookies').innerHTML = cookies;
+    }
+}
 //* load save data
 function loadSave(){
     cookies = Number(localStorage.getItem('cookieCount'));
