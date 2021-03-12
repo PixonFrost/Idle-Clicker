@@ -60,11 +60,16 @@ function cookieClick(number){
 //* the function that determines how many points per second come from each gen tier
 //* also determines the points per second element
 function genTick(){
+    cookiePrev = cookies;
     cookies = cookies + cursors;
+    cookies = cookies + gen2;
 
-    document.getElementById("perSecond").innerHTML = cursors;
+    cookieNew = cookies - cookiePrev;
+
+    document.getElementById("perSecond").innerHTML = cookieNew;
     document.getElementById("cookies").innerHTML = cookies;
     document.getElementById("cursors").innerHTML = cursors;
+    document.getElementById("gen2").innerHTML = gen2;
 }
 
 //* buy generator tier 1 function
@@ -82,26 +87,32 @@ function buyCursor(){
 };
 
 function buyGen2(){
-    var gen2Cost = Math.floor(10 * Math.pow(1.1, cursors));
+    var gen2Cost = Math.floor(100 * Math.pow(1.1, cursors));
     if(cookies >= gen2Cost){
         gen2 = gen2 + 1;
         cookies = cookies - gen2Cost;
         document.getElementById('gen2').innerHTML = gen2;
         document.getElementById('cookies').innerHTML = cookies;
-    }
+        localStorage.setItem('gen2', gen2);
+    };
+    var next2Cost = Math.floor(100 * Math.pow(1.1, gen2));
+    document.getElementById('gen2Cost').innerHTML = next2Cost;
 }
 //* load save data
 function loadSave(){
     cookies = Number(localStorage.getItem('cookieCount'));
     cursors = Number(localStorage.getItem('cursors'));
+    gen2 = Number(localStorage.getItem('gen2'));
 
     document.getElementById("perSecond").innerHTML = cursors;
     document.getElementById("cookies").innerHTML = cookies;
+    document.getElementById("gen2").innerHTML = gen2
 }
 
 function saveData(){
     localStorage.setItem('cookieCount', cookies);
     localStorage.setItem('cursors', cursors);
+    localStorage.setItem('gen2', gen2);
 }
 
 //* game window interval bit
